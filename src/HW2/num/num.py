@@ -3,7 +3,7 @@ import math
 
 class NUM:
     def __init__(self,s=None,n=None):
-        self.txt=txt if txt else " "
+        self.txt=s if s else " "
         self.at=n if n else 0
         self.n=0
         self.mu=0
