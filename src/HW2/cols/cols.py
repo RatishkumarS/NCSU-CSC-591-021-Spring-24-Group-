@@ -18,6 +18,7 @@ class COLS:
                 (self.y if txt.endswith("!") or txt.endswith("+")
                  or txt.endswith("-") else self.x)[at] = col
 
+        #check this with Ratish
         self.names = row.cells
 
     def add(self, row):
