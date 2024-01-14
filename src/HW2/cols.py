@@ -1,12 +1,11 @@
 import math
-
+from num import NUM
+from sym import SYM
 
 class COLS:
-    def __init__(self):
+    def __init__(self,row):
         self.x, self.y, self.all = [], [], []
         self.klass, self.col = None, None
-
-    def new(self, row):
         for at, txt in enumerate(row.cells):
             col = (NUM if txt[0].isalpha()
                    and txt[0].isupper() else SYM)(txt, at)
@@ -17,8 +16,7 @@ class COLS:
                     self.klass = col
                 (self.y if txt.endswith("!") or txt.endswith("+")
                  or txt.endswith("-") else self.x)[at] = col
-
-        #check this with Ratish
+                
         self.names = row.cells
 
     def add(self, row):

@@ -25,9 +25,3 @@ class SYM:
         for v in self.has.values():
             e += -v / self.n * math.log2(v / self.n)
         return e
-
-    def small(small):
-        return 0
-
-    def like(x, prior):
-        return ((self.has[x] if self.has[x] else 0) + the.m*prior) / (self.n + the.m)
