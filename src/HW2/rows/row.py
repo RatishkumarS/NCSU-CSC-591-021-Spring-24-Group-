@@ -5,7 +5,6 @@ class ROW:
     def __init__(self, t):
         self.cells = t
 
-    # Distance to best values (and _lower_ is _better_).
     def d2h(self, data):
         d, n = 0, 0
         for col in data.cols.y:
@@ -13,7 +12,6 @@ class ROW:
             d += abs(col.heaven - col.norm(self.cells[col.at])) ** 2
         return math.sqrt(d) / math.sqrt(n)
 
-    # Return the `data` (from `datas`) that I like the best
     def likes(self, datas):
         n, nHypotheses = 0, 0
         for data in datas:
@@ -27,8 +25,6 @@ class ROW:
                 most, out = tmp, k
         return out, most
 
-    # How much does ROW like `self`. Using logs since these
-    # numbers are going to get very small.
     def like(self, data, n, nHypotheses):
         prior = (len(data.rows) + the.k) / (n + the.k * nHypotheses)
         out = math.log(prior)
